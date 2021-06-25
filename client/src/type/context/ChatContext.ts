@@ -1,4 +1,4 @@
-import {MessageType} from "./Message";
+import {MessageType} from "../Message";
 
 export interface ChatContextType {
     messages: Array<MessageType>,

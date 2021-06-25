@@ -1,5 +1,5 @@
 import React, {createContext, PropsWithChildren, useEffect, useState} from 'react';
-import {ChatContextType} from "../type/ChatContext";
+import {ChatContextType} from "../type/context/ChatContext";
 import {MessageType} from "../type/Message";
 
 const contextDefaultValue: ChatContextType = {
