@@ -4,11 +4,3 @@
     display:flex;
     flex-direction: column;
 }
-
-.chat-timeline{
-    flex: 1;
-}
-
-.input-bar-container{
-    background-color: green;
-}
