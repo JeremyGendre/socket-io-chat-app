@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 import './style/App.css';
+import Header from "./components/header/Header";
+import Content from "./components/content/Content";
 
 function App() {
     const [data, setData] = React.useState(null);
@@ -8,16 +10,12 @@ function App() {
         fetch("/api/")
             .then((res) => res.json())
             .then((data) => setData(data.message));
-    }, []);console.log('tg');
+    }, []);
 
     return (
         <div className="app">
-            <header className="app-header">
-                header
-            </header>
-            <div className="app-content">
-                <p>{!data ? "Loading..." : data}</p>
-            </div>
+            <Header/>
+            <Content/>
         </div>
     );
 }
