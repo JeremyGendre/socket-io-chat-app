@@ -8,13 +8,17 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 
 app.get('/api', (req, res) => {
-    res.send('welcome to the chap API :D');
+    res.send('welcome to this socket io chat API :D');
 });
 
 io.sockets.on('connection', function (socket) {
     console.log('connection !!');
     socket.on('join', function (data) {
         socket.join(data); // We are using room of socket io
+    });
+    socket.on('chat message', (msg) => {
+        console.log('message: ' + msg.value);
+        io.emit('chat message', msg);
     });
     socket.on('disconnect', () => {
         console.log('user disconnected');
