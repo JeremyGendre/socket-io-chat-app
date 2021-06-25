@@ -1,3 +1,35 @@
 .input-bar-container{
-    background-color: green;
+    padding: 0.5em;
+    border-top: solid 1px lightgray;
+    display: flex;
+    gap:1em;
+}
+
+.input-bar-container input{
+    box-sizing: border-box;
+    background-color: #e2e2e2;
+    border-radius: 999px;
+    padding: 1em;
+    border: unset;
+    width: 100%;
+}
+
+.input-bar-container input:focus, .input-bar-container button:focus{
+    outline: none;
+}
+
+.input-bar-container button{
+    background-color: #3e2fff;
+    color: white;
+    padding: 1em 1.5em;
+    border-radius: 999px;
+    border:none;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+.input-bar-container button:hover{
+    background-color: #3c14ff;
+}
+.input-bar-container button:focus{
+    transform: scale(0.95);
 }
