@@ -1,0 +1,20 @@
+.message-row{
+    display: flex;
+    width: 100%;
+    margin-top: 0.3em;
+}
+.message-row-owner{
+    justify-content: flex-end;
+}
+.message-container{
+    color:white;
+    display: inline-block;
+    border-radius: 999px;
+    padding: 0.3em 0.7em;
+}
+.message-not-owner-container{
+    background-color: #919191;
+}
+.message-owner-container{
+    background-color: #5628ff;
+}
