@@ -6,7 +6,7 @@ const socket = io();
 export default function Content(){
     return(
         <div className="app-content">
-            <p>ouais</p>
+
         </div>
     );
 }

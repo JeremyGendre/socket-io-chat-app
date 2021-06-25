@@ -8,7 +8,7 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 
 app.get('/api', (req, res) => {
-    res.send(['tg', 'ouais']);
+    res.send('welcome to the chap API :D');
 });
 
 io.sockets.on('connection', function (socket) {
