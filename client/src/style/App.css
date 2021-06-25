@@ -1,5 +1,14 @@
 body{
     padding:0;
     margin:0;
-    color: #484848;
+    color: #404040;
+}
+#root{
+    height: 100vh;
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
