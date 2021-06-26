@@ -1,4 +1,4 @@
-import React, {FormEvent, useContext, useState} from "react";
+import React, {FormEvent, useContext, useEffect, useState} from "react";
 import '../../../style/chat/inputbar.css';
 import {ChatContext} from "../../../context/ChatContext";
 import {UserContext} from "../../../context/UserContext";
@@ -10,6 +10,12 @@ export default function InputBar(){
     const chatContext = useContext(ChatContext);
     const userContext = useContext(UserContext);
     const [newMessage, setNewMessage] = useState('');
+
+    useEffect(() => {
+        socket.on('chat message', function(msg: MessageType) {
+            chatContext.addMessage(msg);
+        });
+    }, []);
 
     if(!userContext.user){return (<>Vous devez être connecté pour envoyer un message</>)}
 
@@ -23,9 +29,6 @@ export default function InputBar(){
         setNewMessage('');
     };
 
-    socket.on('chat message', function(msg: MessageType) {
-        chatContext.addMessage(msg);
-    });
 
     return(
         <form onSubmit={handleSubmit} className="input-bar-container">
