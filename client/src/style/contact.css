@@ -1,4 +1,7 @@
 .contact-box{
-    background-color: red;
-    width: 20rem;
+    max-width: 20rem;
+    padding: 1em;
+    border-right: solid 1px lightgray;
+    position: sticky;
+    top:0;
 }

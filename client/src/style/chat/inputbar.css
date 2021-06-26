@@ -1,6 +1,9 @@
 .input-bar-container{
+    position: sticky;
+    bottom:0;
     padding: 0.5em;
     border-top: solid 1px lightgray;
+    background-color: inherit;
     display: flex;
     gap:1em;
 }
