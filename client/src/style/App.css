@@ -13,3 +13,27 @@ body{
     flex-direction: column;
     height: 100%;
 }
+
+button, input{
+    border:none;
+    box-sizing: border-box;
+    transition: all 0.15s ease-in-out;
+}
+button:focus, input:focus{
+    outline: none;
+}
+
+button{
+    font-weight: bold;
+    border-radius: 999px;
+    padding:1em;
+    background-color: #3e2fff;
+    color: white;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #3c14ff;
+}
+button:focus{
+    transform: scale(0.95);
+}

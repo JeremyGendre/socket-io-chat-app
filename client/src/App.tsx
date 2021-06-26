@@ -1,17 +1,24 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './style/App.css';
 import Header from "./components/header/Header";
 import Content from "./components/content/Content";
-import UserContextProvider from "./context/UserContext";
+import {UserContext} from "./context/UserContext";
+import Login from "./components/connection/Login";
 
 function App() {
+    const userContext = useContext(UserContext);
+
     return (
-        <UserContextProvider>
-            <div className="app">
-                <Header/>
-                <Content/>
-            </div>
-        </UserContextProvider>
+        <div className="app">
+            {!userContext.user ? (
+                <Login/>
+            ) : (
+                <>
+                    <Header/>
+                    <Content/>
+                </>
+            )}
+        </div>
     );
 }
 
