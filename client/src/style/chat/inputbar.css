@@ -20,6 +20,7 @@
 
 .input-bar-container button{
     background-color: #3e2fff;
+    font-weight: bold;
     color: white;
     padding: 1em 1.5em;
     border-radius: 999px;
