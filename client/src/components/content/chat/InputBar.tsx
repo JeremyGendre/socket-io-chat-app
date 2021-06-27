@@ -1,9 +1,7 @@
-import React, {FormEvent, useContext, useEffect, useState} from "react";
+import React, {FormEvent, useContext, useState} from "react";
 import '../../../style/chat/inputbar.css';
 import {ChatContext} from "../../../context/ChatContext";
 import {UserContext} from "../../../context/UserContext";
-import {io, Socket} from "socket.io-client";
-import {MessageType} from "../../../type/Message";
 
 
 export default function InputBar(){
@@ -17,7 +15,7 @@ export default function InputBar(){
         e.preventDefault();
         const authorId = userContext.user ? userContext.user.id : 1;
         const message = {value: newMessage, authorId: authorId, createdAt: new Date()};
-        chatContext.socket?.emit('chat message', message);
+        chatContext.socket?.emit('chatMessage', message);
         chatContext.addMessage(message);
         setNewMessage('');
     };

@@ -4,3 +4,7 @@ export interface UserType{
     username: string,
     email: string
 }
+
+export interface ConnectedUserType extends UserType{
+    socketId: string
+}

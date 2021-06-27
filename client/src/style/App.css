@@ -38,7 +38,16 @@ button:focus{
     transform: scale(0.95);
 }
 
+
+hr{
+    border:none;
+    border-bottom: solid 1px lightgray;
+}
+
 .my-auto{
     margin-bottom: auto;
     margin-top: auto;
+}
+.font-bold{
+    font-weight: bold;
 }

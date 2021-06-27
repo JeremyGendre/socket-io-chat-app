@@ -11,7 +11,7 @@ export default function Header(){
 
     return (
         <header className="app-header">
-            <div className="my-auto">Welcome {userContext.user?.username}</div>
+            <div className="my-auto">Welcome <span className="font-bold">{userContext.user?.username}</span></div>
             <div>
                 <button className="disconnect-btn" onClick={handleDisconnect}>Disconnect</button>
             </div>
