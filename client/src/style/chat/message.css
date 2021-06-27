@@ -18,3 +18,25 @@
 .message-owner-container{
     background-color: #5628ff;
 }
+
+
+.message-alert-row{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.message-alert-text{
+    font-style: italic;
+    font-size: 0.9em;
+    padding: 0 1em;
+}
+.message-alert-delimiter-container{
+    flex:1;
+    display: flex;
+}
+.message-alert-delimiter{
+    margin: auto;
+    width: 100%;
+    height:1px;
+    background-color: #e2e2e2;
+}

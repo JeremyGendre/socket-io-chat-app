@@ -25,10 +25,13 @@ io.sockets.on('connection', function (socket) {
     socket.on('setUser', (user) => {
         const newUser = {...user, socketId : socket.id};
         connectedUsers.push(newUser);
+        socket.broadcast.emit('newConnectedUser', newUser);
         socket.broadcast.emit('connectedUsers', connectedUsers);
     });
     socket.on('disconnect', () => {
+        const disconnectedUser = connectedUsers.find(user => user.socketId === socket.id);
         connectedUsers = connectedUsers.filter(user => user.socketId !== socket.id);
+        socket.broadcast.emit('newDisconnectedUser', disconnectedUser);
         socket.broadcast.emit('connectedUsers', connectedUsers);
         console.log('user disconnected : ' + socket.id);
     });

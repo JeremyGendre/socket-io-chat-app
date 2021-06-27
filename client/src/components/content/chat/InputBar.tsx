@@ -2,6 +2,7 @@ import React, {FormEvent, useContext, useState} from "react";
 import '../../../style/chat/inputbar.css';
 import {ChatContext} from "../../../context/ChatContext";
 import {UserContext} from "../../../context/UserContext";
+import {MESSAGE_TYPES} from "../../../type/Message";
 
 
 export default function InputBar(){
@@ -13,8 +14,8 @@ export default function InputBar(){
 
     const handleSubmit = (e:FormEvent) => {
         e.preventDefault();
-        const authorId = userContext.user ? userContext.user.id : 1;
-        const message = {value: newMessage, authorId: authorId, createdAt: new Date()};
+        if(!userContext.user){return;}
+        const message = {value: newMessage, author: userContext.user, createdAt: new Date(), type: MESSAGE_TYPES.NORMAL};
         chatContext.socket?.emit('chatMessage', message);
         chatContext.addMessage(message);
         setNewMessage('');
