@@ -29,7 +29,7 @@ export default function ChatContextProvider({children}: PropsWithChildren<any>){
     }, []);
 
     useEffect(() => {
-        if(socket){
+        if(socket && userContext.user){
             socket.emit('setUser', userContext.user);
             socket.on('chatMessage', function(msg: MessageType) {
                 addMessage(msg);
@@ -39,7 +39,7 @@ export default function ChatContextProvider({children}: PropsWithChildren<any>){
             });
             return () => {socket.disconnect()};
         }
-    }, [socket]);
+    }, [socket, userContext.user]);
 
     return(
         <ChatContext.Provider value={{

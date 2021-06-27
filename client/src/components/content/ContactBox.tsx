@@ -15,6 +15,7 @@ export default function ContactBox(){
                     if(user.socketId !== chatContext.socket?.id){
                         return <div key={user.socketId}>{user.username}</div>
                     }
+                    return null;
                 })}
             </div>
         </div>
