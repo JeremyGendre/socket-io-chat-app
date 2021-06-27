@@ -12,7 +12,8 @@ app.get('/api', (req, res) => {
 });
 
 io.sockets.on('connection', function (socket) {
-    console.log('connection !!');
+    console.log('connection : ' + Object.keys(socket));
+    console.log(socket.client.id);
     socket.on('join', function (data) {
         socket.join(data); // We are using room of socket io
     });

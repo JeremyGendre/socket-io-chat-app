@@ -37,3 +37,8 @@ button:hover{
 button:focus{
     transform: scale(0.95);
 }
+
+.my-auto{
+    margin-bottom: auto;
+    margin-top: auto;
+}
