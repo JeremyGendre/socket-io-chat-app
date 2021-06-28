@@ -48,6 +48,5 @@ hr{
     margin-bottom: auto;
     margin-top: auto;
 }
-.font-bold{
-    font-weight: bold;
-}
+.font-bold{font-weight: bold;}
+.flex{display: flex}

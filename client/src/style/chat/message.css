@@ -40,3 +40,8 @@
     height:1px;
     background-color: #e2e2e2;
 }
+
+.message-username{
+    font-size: 0.8em;
+    font-style: italic;
+}

@@ -24,8 +24,11 @@ export function Message({message}: Type){
     const isOwnerMessage = (message.author.id === userContext.user?.id);
     return(
         <div className={`message-row ${isOwnerMessage ? 'message-row-owner' : ''}`}>
-            <div className={`message-container message${!isOwnerMessage ? '-not' : ''}-owner-container`}>
-                {message.value}
+            <div>
+                {!isOwnerMessage && <div className="message-username">{message.author.username}</div>}
+                <div className={`message-container message${!isOwnerMessage ? '-not' : ''}-owner-container`}>
+                    {message.value}
+                </div>
             </div>
         </div>
     );
